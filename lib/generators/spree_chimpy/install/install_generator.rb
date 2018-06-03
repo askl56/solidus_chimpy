@@ -10,7 +10,7 @@ module SpreeChimpy
       end
 
       def add_migrations
-        run 'bundle exec rake railties:install:migrations FROM=spree_chimpy'
+        run 'bundle exec rake railties:install:migrations FROM=solidus_chimpy'
       end
 
       def run_migrations
