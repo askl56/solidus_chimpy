@@ -1,4 +1,4 @@
-class CreateOrderSources < ActiveRecord::Migration
+class CreateOrderSources < ActiveRecord::Migration[4.2]
   def change
     create_table :spree_chimpy_order_sources do |t|
       t.references :order
