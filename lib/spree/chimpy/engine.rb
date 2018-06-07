@@ -1,8 +1,8 @@
 module Spree::Chimpy
   class Engine < Rails::Engine
-    require 'spree/core'
+    require 'solidus/core'
     isolate_namespace Spree
-    engine_name 'spree_chimpy'
+    engine_name 'solidus_chimpy'
 
     config.autoload_paths += %W(#{config.root}/lib)
 
