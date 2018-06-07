@@ -1,9 +1,11 @@
-# Spree/MailChimp Integration
+# Solidus/MailChimp Integration
+
+## This extension is effectively a hard fork of DynamoMTL's Spree version for Solidus. 
 
 [![Build Status](https://app.wercker.com/status/03e07999926ddaf022b4ad7ec6460f27/s "wercker status")](https://app.wercker.com/project/bykey/03e07999926ddaf022b4ad7ec6460f27)
 [![Code Climate](https://codeclimate.com/github/DynamoMTL/spree_chimpy.png)](https://codeclimate.com/github/DynamoMTL/spree_chimpy)
 
-Makes it easy to integrate your [Spree][1] app with [MailChimp][2].
+Makes it easy to integrate your [Solidus][1] app with [MailChimp][2].
 
 **List synchronization**
 > Automatically syncs Spree's user list with MailChimp. The user can
@@ -50,7 +52,7 @@ gem 'spree_chimpy'
 Alternatively you can use the git repo directly:
 
 ```ruby
-gem 'spree_chimpy', github: 'DynamoMTL/spree_chimpy', branch: 'master'
+gem 'solidus_chimpy', github: 'askl56/solidus_chimpy', branch: 'master'
 ```
 
 Run bundler:
