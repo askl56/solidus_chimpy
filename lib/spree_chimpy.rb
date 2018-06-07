@@ -1,4 +1,4 @@
-require 'spree_core'
+require 'solidus_core'
 require 'spree/chimpy/engine'
 require 'spree/chimpy/subscription'
 require 'spree/chimpy/workers/delayed_job'
