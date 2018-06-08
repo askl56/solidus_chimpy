@@ -6,7 +6,7 @@ module SpreeChimpy
       source_root File.expand_path('../../../templates/', __FILE__)
 
       def copy_initializer_file
-        copy_file 'spree_chimpy.rb', "config/initializers/spree_chimpy.rb"
+        copy_file 'solidus.rb', "config/initializers/solidus_chimpy.rb"
       end
 
       def add_migrations
