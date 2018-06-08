@@ -6,6 +6,7 @@ module Spree::Chimpy
 
     config.autoload_paths += %W(#{config.root}/lib)
 
+    # this doesnt load
     initializer "spree_chimpy.environment", before: 'spree.environment' do |app|
       Spree::Chimpy::Config = Spree::Chimpy::Configuration.new
     end
