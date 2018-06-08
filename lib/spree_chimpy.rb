@@ -6,8 +6,6 @@ require_relative '../app/models/spree/chimpy/configuration'
 require 'gibbon'
 require 'coffee_script'
 
-# Spree::Chimpy::Config = Spree::Chimpy::Configuration.new
-
 module Spree::Chimpy
   extend self
 
