@@ -1,15 +1,18 @@
-require 'solidus_core'
-require 'spree/chimpy/engine'
-require 'spree/chimpy/subscription'
-require 'spree/chimpy/workers/delayed_job'
+require 'spree_core'
+require_relative 'spree/chimpy/engine'
+require_relative 'spree/chimpy/subscription'
+require_relative 'spree/chimpy/workers/delayed_job'
+require_relative '../app/models/spree/chimpy/configuration'
 require 'gibbon'
 require 'coffee_script'
+
+# Spree::Chimpy::Config = Spree::Chimpy::Configuration.new
 
 module Spree::Chimpy
   extend self
 
   def config(&block)
-    yield(Spree::Chimpy::Config)
+    return Spree::Chimpy::Config
   end
 
   def enqueue(event, object)

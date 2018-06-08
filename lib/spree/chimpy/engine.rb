@@ -1,12 +1,13 @@
 module Spree::Chimpy
   class Engine < Rails::Engine
-    require 'solidus/core'
+    require 'spree/core'
     isolate_namespace Spree
     engine_name 'solidus_chimpy'
 
     config.autoload_paths += %W(#{config.root}/lib)
 
-    initializer "spree_chimpy.environment", before: :load_config_initializers do |app|
+    # this doesnt load
+    initializer "spree_chimpy.environment", before: 'spree.environment' do |app|
       Spree::Chimpy::Config = Spree::Chimpy::Configuration.new
     end
 
