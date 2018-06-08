@@ -46,12 +46,6 @@ Makes it easy to integrate your [Solidus][1] app with [MailChimp][2].
 Add spree_chimpy to your `Gemfile`:
 
 ```ruby
-gem 'spree_chimpy'
-```
-
-Alternatively you can use the git repo directly:
-
-```ruby
 gem 'solidus_chimpy', github: 'askl56/solidus_chimpy', branch: 'master'
 ```
 

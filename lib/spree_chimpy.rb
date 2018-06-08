@@ -3,6 +3,7 @@ require_relative 'spree/chimpy/engine'
 require_relative 'spree/chimpy/subscription'
 require_relative 'spree/chimpy/workers/delayed_job'
 require_relative '../app/models/spree/chimpy/configuration'
+
 require 'gibbon'
 require 'coffee_script'
 
