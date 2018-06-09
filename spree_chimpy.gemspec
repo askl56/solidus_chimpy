@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'solidus_chimpy'
+  s.name        = 'spree_chimpy'
   s.version     = '1.0.0'
   s.summary     = 'MailChimp/Solidus integration using the mailchimp gem'
   s.description = s.summary
