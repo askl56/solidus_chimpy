@@ -52,7 +52,7 @@ module Spree::Chimpy
         response = store_api_call
           .products(@variant.product.id)
           .retrieve(params: { "fields" => "id" })
-        !response["id"].nil?
+        !response.body["id"].nil?
       rescue Gibbon::MailChimpError => e
         false
       end

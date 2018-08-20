@@ -62,7 +62,7 @@ module Spree::Chimpy
             .members
             .retrieve(params: { "unique_email_id" => mc_eid, "fields" => "members.id,members.email_address" })
 
-          member_data = response["members"].first
+          member_data = response.body["members"].first
           member_data["email_address"] if member_data
         rescue Gibbon::MailChimpError => ex
           nil
@@ -78,7 +78,7 @@ module Spree::Chimpy
             .retrieve(params: { "fields" => "email_address,merge_fields,status"})
 
           response = response.symbolize_keys
-          response.merge(email: response[:email_address])
+          response.merge(email: response.body[:email_address])
         rescue Gibbon::MailChimpError
           {}
         end
@@ -91,7 +91,7 @@ module Spree::Chimpy
         response = api_list_call
           .merge_fields
           .retrieve(params: { "fields" => "merge_fields.tag,merge_fields.name"})
-        response["merge_fields"].map { |record| record['tag'] }
+        response.body["merge_fields"].map { |record| record['tag'] }
       end
 
       def add_merge_var(tag, description)
@@ -109,7 +109,7 @@ module Spree::Chimpy
       def find_list_id(name)
         response = api_call
           .retrieve(params: {"fields" => "lists.id,lists.name"})
-        list = response["lists"].detect { |r| r["name"] == name }
+        list = response.body["lists"].detect { |r| r["name"] == name }
         list["id"] if list
       end
 
@@ -134,7 +134,7 @@ module Spree::Chimpy
         response = api_list_call
           .segments
           .retrieve(params: {"fields" => "segments.id,segments.name"})
-        segment = response["segments"].detect {|segment| segment['name'].downcase == @segment_name.downcase }
+        segment = response.body["segments"].detect {|segment| segment['name'].downcase == @segment_name.downcase }
 
         segment['id'] if segment
       end
