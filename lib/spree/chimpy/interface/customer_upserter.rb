@@ -28,7 +28,7 @@ module Spree::Chimpy
               .customers
               .retrieve(params: { "fields" => "customers.id", "email_address" => email })
 
-            data = response.body["customers"].first
+            data = response["customers"].first
             data["id"] if data
           rescue Gibbon::MailChimpError => e
             nil

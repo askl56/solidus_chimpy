@@ -28,7 +28,7 @@ describe 'Subscribers' do
 
       expect(response).to be_success
       json_response = JSON.parse(response.body)
-      expect(json_response.body['email']).to eq('foo2@bar.com')
+      expect(json_response['email']).to eq('foo2@bar.com')
     end
   end
 end
