@@ -1,3 +1,4 @@
+require 'sidekiq'
 module Spree::Chimpy
   module Workers
     class Sidekiq

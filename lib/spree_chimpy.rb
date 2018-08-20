@@ -1,7 +1,7 @@
 require 'spree_core'
 require_relative 'spree/chimpy/engine'
 require_relative 'spree/chimpy/subscription'
-require_relative 'spree/chimpy/workers/delayed_job'
+require_relative 'spree/chimpy/workers/sidekiq'
 require_relative '../app/models/spree/chimpy/configuration'
 
 require 'gibbon'
@@ -108,7 +108,7 @@ module Spree::Chimpy
       ::Delayed::Job.enqueue(payload_object: Spree::Chimpy::Workers::DelayedJob.new(payload),
                              run_at: Proc.new { 4.minutes.from_now })
     when defined?(::Sidekiq)
-      Spree::Chimpy::Workers::Sidekiq.perform_in(4.minutes, payload.except(:object))
+      ::Spree::Chimpy::Workers::Sidekiq.perform_in(4.minutes, payload.except(:object))
     when defined?(::Resque)
       ::Resque.enqueue(Spree::Chimpy::Workers::Resque, payload.except(:object))
     else
