@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_chimpy'
-  s.version     = '1.0.1'
+  s.version     = '1.0.3'
   s.summary     = 'MailChimp/Solidus integration using the mailchimp gem'
   s.description = s.summary
   s.required_ruby_version = '>= 1.9.3'
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'gibbon'
+  s.add_dependency 'gibbon', '~> 2'
   s.add_dependency 'solidus_core', '~> 2.5'
 
   s.add_development_dependency 'rspec-rails'
