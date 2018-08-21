@@ -2,6 +2,12 @@ require 'spree_core'
 require_relative 'spree/chimpy/engine'
 require_relative 'spree/chimpy/subscription'
 require_relative 'spree/chimpy/workers/sidekiq'
+require_relative 'spree/chimpy/interface/customer_upserter'
+require_relative 'spree/chimpy/interface/list'
+require_relative 'spree/chimpy/interface/order_upserter'
+require_relative 'spree/chimpy/interface/orders'
+require_relative 'spree/chimpy/interface/products'
+
 require_relative '../app/models/spree/chimpy/configuration'
 
 require 'gibbon'
