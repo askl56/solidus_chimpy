@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_chimpy'
-  s.version     = '1.0.7'
+  s.version     = '1.0.8'
   s.summary     = 'MailChimp/Solidus integration using the mailchimp gem'
   s.description = s.summary
   s.required_ruby_version = '>= 1.9.3'
@@ -19,11 +19,12 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'gibbon', '~> 2'
   s.add_dependency 'solidus_core', '~> 2.5'
+  s.add_dependency 'sidekiq'
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'rubocop'
-  s.add_development_dependency 'factory_girl'
+  s.add_development_dependency 'factory_bot'
   s.add_development_dependency 'poltergeist'
   s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency 'simplecov'
