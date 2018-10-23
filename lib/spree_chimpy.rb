@@ -61,7 +61,7 @@ module Spree::Chimpy
   end
 
   def segment_exists?
-    list.segment_id
+    list.segment_id || list.segment_name
   end
 
   def create_segment

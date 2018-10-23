@@ -1,4 +1,6 @@
 require 'digest'
+require 'pry'
+
 
 module Spree::Chimpy
   module Interface
@@ -137,10 +139,23 @@ module Spree::Chimpy
         segment = response["segments"].detect {|segment| segment['name'].downcase == @segment_name.downcase }
 
         segment['id'] if segment
+      end      
+
+      def find_segment_name
+        response = api_list_call
+          .segments
+          .retrieve(params: {"fields" => "segments.id,segments.name"})
+        segment = response["segments"].detect {|segment| segment['name'].downcase == @segment_name.downcase }
+
+        segment['name'] if segment
       end
 
       def segment_id
         @segment_id ||= find_segment_id
+      end
+
+      def segment_name
+        @segment_name ||= find_segment_name
       end
 
       def api_list_call
