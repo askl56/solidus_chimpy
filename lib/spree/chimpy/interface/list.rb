@@ -1,5 +1,5 @@
 require 'digest'
-require 'pry'
+# require 'pry'
 
 
 module Spree::Chimpy
