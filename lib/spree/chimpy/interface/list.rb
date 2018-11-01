@@ -151,7 +151,7 @@ module Spree::Chimpy
       end
 
       def segment_id
-        @segment_id ||= find_segment_id
+        @segment_id ||= find_segment_id || nil
       end
 
       def segment_name
